@@ -35,6 +35,7 @@ import (
 	_ "github.com/influxdata/telegraf/plugins/parsers/all"
 	_ "github.com/influxdata/telegraf/plugins/processors/all"
 	"gopkg.in/tomb.v1"
+	"github.com/pdelewski/autotel/rtlib"
 )
 
 type sliceFlags []string
@@ -382,6 +383,7 @@ func deleteEmpty(s []string) []string {
 }
 
 func main() {
+        rtlib.AutotelEntryPoint__()
 	flag.Var(&fConfigs, "config", "configuration file to load")
 	flag.Var(&fConfigDirs, "config-directory", "directory containing additional *.conf files")
 
